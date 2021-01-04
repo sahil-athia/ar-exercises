@@ -10,3 +10,8 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+user_given_name = gets.chomp
+
+@failed_store = Store.create(name: user_given_name)
+
+puts @failed_store.errors.full_messages.first if @failed_store.errors.any?
